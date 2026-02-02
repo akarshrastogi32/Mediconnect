@@ -1,29 +1,31 @@
 package com.edutech.progressive.service;
 
-import com.edutech.progressive.dto.DoctorDTO;
-import com.edutech.progressive.entity.Doctor;
+import com.edutech.progressive.dto.PatientDTO;
+import com.edutech.progressive.entity.Patient;
 
 import java.util.List;
 
-public interface DoctorService {
+public interface PatientService {
 
-    public List<Doctor> getAllDoctors() throws Exception;
+    List<Patient> getAllPatients() throws Exception;
 
-    public Integer addDoctor(Doctor doctor) throws Exception;
+    Integer addPatient(Patient patient) throws Exception;
 
-    public List<Doctor> getDoctorSortedByExperience() throws Exception;
+    List<Patient> getAllPatientSortedByName() throws Exception;
 
-    default void emptyArrayList() {
+    default void emptyArrayList() throws Exception{
     }
 
-    //Do not implement these methods in DoctorServiceImplArraylist.java class
-    default public void updateDoctor(Doctor doctor)throws Exception { }
+    //Do not implement these methods in PatientServiceImplArraylist.java class
+    default void updatePatient(Patient patient) throws Exception{}
 
-    default public void deleteDoctor(int doctorId)throws Exception { }
+    default void deletePatient(int patientId)throws Exception {}
 
-    default Doctor getDoctorById(int doctorId)throws Exception { return null; }
+    default Patient getPatientById(int patientId)throws Exception {
+        return null;
+    }
 
-    //Do not implement these methods in DoctorServiceImplArraylist.java and DoctorServiceImplJdbc.java class
-    // Do not implement this method until day-13
-    default public void modifyDoctorDetails(DoctorDTO doctorDTO) { }
+    //Do not implement these methods in PatientServiceImplArraylist.java and PatientServiceImplJdbc.java class
+    //Do not implement this method until day-13
+    default public void modifyPatientDetails(PatientDTO patientDTO) throws Exception{ }
 }
